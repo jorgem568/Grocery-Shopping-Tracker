@@ -6,7 +6,35 @@ const rl = readline.createInterface({
   output: process.stdout, // Write to standard output (console)
 });
 
+rl.once("close", () => {
+  // end of input
+  console.log("\nGoodbye");
+});
+
 const groceryList = [];
+
+if (process.env.DEBUG_MODE === "true") {
+  groceryList.push({
+    name: "pizza",
+    quantity: 3,
+    price: 2,
+    bought: false,
+  });
+
+  groceryList.push({
+    name: "Potato",
+    quantity: 3,
+    price: 2,
+    bought: false,
+  });
+
+  groceryList.push({
+    name: "Apple",
+    quantity: 3,
+    price: 2,
+    bought: false,
+  });
+}
 
 function showGroceryList() {
   console.log("\nGrocery List:");
@@ -32,12 +60,10 @@ function showGroceryList() {
   }
 }
 
-function groceryShopping() {
-  rl.once("close", () => {
-    // end of input
-    console.log("\nGoodbye");
-  });
-
+function groceryShopping(clear = true) {
+  if (clear === true) {
+    console.clear();
+  }
   console.log("\n------------ Menu ------------");
   console.log("1. Display grocery list");
   console.log("2. Add Items to grocery list");
@@ -47,18 +73,20 @@ function groceryShopping() {
   rl.question("Choose an option: ", (input) => {
     switch (input) {
       case "1":
+        console.clear();
         showGroceryList();
-        groceryShopping();
+        groceryShopping(false);
         break;
 
       case "2":
+        console.clear();
         console.log(" \nEnter Item name followed by quantity and price");
         console.log("  (Enter Q, quit or menu at any time to go back to menu)");
 
         let newItem = {
           name: "",
-          quantity: "",
-          price: "",
+          quantity: 0,
+          price: 0,
           bought: false,
         };
 
@@ -84,13 +112,13 @@ function groceryShopping() {
             rl.prompt();
             i++;
           } else if (i == 1) {
-            newItem.quantity = line;
+            newItem.quantity = parseInt(line, 10);
             rl.setPrompt("Price: ");
             rl.prompt();
             i++;
           } else {
             //Here we Add the price and then push it to the List and reset everything back to the start
-            newItem.price = line;
+            newItem.price = parseInt(line, 10);
             rl.setPrompt("Item name: ");
 
             groceryList.push(newItem);
@@ -101,8 +129,8 @@ function groceryShopping() {
             i = 0;
             newItem = {
               name: "",
-              quantity: "",
-              price: "",
+              quantity: 0,
+              price: 0,
               bought: false,
             };
           }
@@ -110,6 +138,7 @@ function groceryShopping() {
         break;
 
       case "3":
+        console.clear();
         showGroceryList();
         console.log(" \nEnter the number of the items you want to remove");
         console.log("  (can enter multiple separated by spaces or commas)");
@@ -130,7 +159,9 @@ function groceryShopping() {
           }
 
           //Split text and turn into Integer
-          const itemIndexes = line.split(/[\s,]+/).map((n) => parseInt(n) - 1);
+          const itemIndexes = line
+            .split(/[\s,]+/)
+            .map((n) => parseInt(n, 10) - 1);
 
           //remove from list
           itemIndexes.forEach((i) => groceryList.splice(i, 1));
@@ -144,6 +175,7 @@ function groceryShopping() {
         break;
 
       case "4":
+        console.clear();
         console.log(
           " \nEnter the number of the items to mark as bought or change to not bought"
         );
@@ -167,7 +199,9 @@ function groceryShopping() {
           }
 
           //Split text and turn into Integer
-          const itemIndexes = line.split(/[\s,]+/).map((n) => parseInt(n) - 1);
+          const itemIndexes = line
+            .split(/[\s,]+/)
+            .map((n) => parseInt(n, 10) - 1);
 
           //remove from list
           itemIndexes.forEach(
@@ -175,6 +209,15 @@ function groceryShopping() {
           );
 
           //Start Again
+
+          console.clear();
+          console.log(
+            " \nEnter the number of the items to mark as bought or change to not bought"
+          );
+          console.log("  (can enter multiple separated by spaces or commas)");
+          console.log(
+            "  (Enter Q, quit or menu at any time to go back to menu)"
+          );
           showGroceryList();
           rl.prompt();
         });
