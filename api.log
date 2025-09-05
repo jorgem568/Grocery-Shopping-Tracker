@@ -50,3 +50,117 @@
   message: 'Item deleted',
   timestamp: '2025-09-04T18:46:11.159Z'
 }
+{
+  message: 'server is listening on http://localhost:3000',
+  level: 'info',
+  timestamp: '2025-09-05T15:52:23.252Z'
+}
+{
+  newItem: { name: 'Tomato2', quantity: 2, price: 5, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T15:54:58.913Z'
+}
+{"timestamp":"2025-09-05T15:59:40.265Z","level":"info","message":"server is listening on http://localhost:3000"}
+{"timestamp":"2025-09-05T15:59:49.452Z","level":"info","message":"Item deleted","index":2}
+{"timestamp":"2025-09-05T16:00:17.493Z","level":"info","message":"Item created","newItem":{"name":"Tomato3","quantity":2,"price":5,"purchased":false}}
+{
+  newItem: { name: 'Apple', quantity: 2, price: 3, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T16:48:12.200Z'
+}
+{
+  newItem: { name: 'Orange', quantity: 1, price: 2, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T16:48:12.208Z'
+}
+{
+  index: 0,
+  currentItem: { name: 'Orange Juice', price: 10, purchased: true, quantity: 5 },
+  level: 'info',
+  message: 'Item updated',
+  timestamp: '2025-09-05T16:48:12.209Z'
+}
+{
+  index: 0,
+  level: 'info',
+  message: 'Item deleted',
+  timestamp: '2025-09-05T16:48:12.211Z'
+}
+{
+  newItem: { name: 'Apple', quantity: 2, price: 3, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T16:49:10.811Z'
+}
+{
+  newItem: { name: 'Orange', quantity: 1, price: 2, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T16:49:10.813Z'
+}
+{
+  index: 0,
+  currentItem: { name: 'Orange Juice', quantity: 5, price: 10, purchased: true },
+  level: 'info',
+  message: 'Item updated',
+  timestamp: '2025-09-05T16:49:10.814Z'
+}
+{
+  index: 0,
+  level: 'info',
+  message: 'Item deleted',
+  timestamp: '2025-09-05T16:49:10.816Z'
+}
+{
+  newItem: { name: 'Apple', quantity: 2, price: 3, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T16:53:55.887Z'
+}
+{
+  newItem: { name: 'Potato', quantity: 1, price: 2, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T16:53:55.890Z'
+}
+{
+  index: 0,
+  currentItem: { name: 'Potato', quantity: 3, price: 12, purchased: true },
+  level: 'info',
+  message: 'Item updated',
+  timestamp: '2025-09-05T16:53:55.891Z'
+}
+{
+  index: 0,
+  level: 'info',
+  message: 'Item deleted',
+  timestamp: '2025-09-05T16:53:55.899Z'
+}
+{
+  newItem: { name: 'Apple', quantity: 2, price: 3, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T18:16:16.275Z'
+}
+{
+  newItem: { name: 'Potato', quantity: 1, price: 2, purchased: false },
+  level: 'info',
+  message: 'Item created',
+  timestamp: '2025-09-05T18:16:16.278Z'
+}
+{
+  index: 0,
+  currentItem: { name: 'Potato', quantity: 3, price: 12, purchased: true },
+  level: 'info',
+  message: 'Item updated',
+  timestamp: '2025-09-05T18:16:16.279Z'
+}
+{
+  index: 0,
+  level: 'info',
+  message: 'Item deleted',
+  timestamp: '2025-09-05T18:16:16.281Z'
+}

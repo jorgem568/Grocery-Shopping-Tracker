@@ -1,1 +1,1 @@
-{"grocery_list":[{"name":"apple","price":3,"purchased":false},{"name":"pizza","quantity":3,"price":6,"purchased":false}]}
+{"grocery_list":[{"name":"Orange","quantity":1,"price":2,"purchased":false},{"name":"Apple","quantity":2,"price":3,"purchased":false},{"name":"Orange","quantity":1,"price":2,"purchased":false},{"name":"Apple","quantity":2,"price":3,"purchased":false},{"name":"Potato","quantity":1,"price":2,"purchased":false},{"name":"Apple","quantity":2,"price":3,"purchased":false},{"name":"Potato","quantity":1,"price":2,"purchased":false}]}
